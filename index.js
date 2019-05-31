@@ -8,7 +8,12 @@ $(function() {
   // console.log will log a message or object to the browser developer console
   console.log("page loaded...");
 
-  $("selector-goes-here").click(/* function for when the button is clicked goes here */);
+  $("#buttonID").click(function(){
+    $("#results-area").text("OHHHHH HIIIIIII");
+    fetchRandomTriviaQuestion(displayQuestionAndAnswer);
+  }/* function for when the button is clicked goes here */);
+
+  //.click adds a "listener" to the click, whatever that in the parantecies gets executed
   /*
    * TODO: You will need to use a css selector to get jQuery to find the button element in the page
    * Then you will need to make a new javascript function to do stuff for when the button
@@ -18,7 +23,8 @@ $(function() {
 });
 
 function displayQuestionAndAnswer(question, answer) {
-  $("#results-area").text("True or false?");
+  //# means id selector
+  $("#results-area").text("True or false?"); //$selects the thing, .text inserts text
   $("#question-display").text(question);
   $("#answer-display").text("Answer: " + answer);
 }
